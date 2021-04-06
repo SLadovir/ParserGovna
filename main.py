@@ -2,11 +2,15 @@ from openpyxl import load_workbook
 
 
 def is_number(str):
-    try:
-        float(str)
-        return True
-    except ValueError:
+    if str:
+        return str.isdigit()
+    else:
         return False
+    # try:
+    #     float(str)
+    #     return True
+    # except ValueError:
+    #     return False
 
 
 def findShitInH(wsg):
@@ -68,8 +72,36 @@ def findPodvidGovn(wsg):
 
     return mainGovn, podvidGovn
 
+def moveMainGovno(wsg,mainGovn):
+    # нужно организовать поиск этого говна в первом столбце
+    startX = []  # строки начала Херни
 
-# from openpyxl import Workbook
+    # print(is_number(1))
+
+    for i in range(3, 11361):  # парсим по первому столбцу
+        # print(wsg['A' + i.__str__()].value)
+        # print(is_number(wsg['A' + i.__str__()].value))
+        if is_number(wsg['A' + i.__str__()].value) == True:  # Ищем порядковый номер Херни
+            startX.append(i)
+    for i in startX:
+        print(i)
+
+
+        # и добавляем его
+            # print(wsg['A' + i.__str__()])
+            #
+    # for i in startX:
+    #     print(i)
+            # и после него считаем количество строк до следующего порядкового номера
+            # sortOfGovn.append(wsg['F' + i.__str__()].value)
+    print(startX)
+
+
+
+
+
+
+
 if __name__ == '__main__':
     wbg = load_workbook('./govno.xlsx')
     wsg = wbg.active
@@ -80,6 +112,8 @@ if __name__ == '__main__':
     # for i in podvidGovn:
     #     print(i)
 
+    moveMainGovno(wsg, mainGovn) # убираем говно (начнем с мейн говна, то есть, если есть мейн
+    #  говно, то мы убираем все, что идет после мейн говна в нужную ячейку)
 
 
 
@@ -99,18 +133,7 @@ if __name__ == '__main__':
 
 
 
-    # # нужно организовать поиск этого говна в первом столбце
-    # startX = []  # строки начала хуйни
-    # for i in range(3, 11361):  # парсим по первому столбцу
-    #     if is_number(['A' + i.__str__()].value):  # Ищем порядковый номер хуйни
-    #         # и добавляем его
-    #         startX.append(i)
-    #
-    #
-    #
-    #         # и после него считаем количество строк до следующего порядкового номера
-    #         sortOfGovn.append(wsg['F' + i.__str__()].value)
-    # print(startX)
+
 
 
 
