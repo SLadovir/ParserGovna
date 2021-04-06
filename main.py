@@ -60,7 +60,9 @@ def findPodvidGovn(wsg):
 
     mainGovn = []  # меин говно
 
-    # for govn in govno
+    # for govn in sortOfGovn3:
+    #     if govn
+
     return mainGovn, podvidGovn
 
 
