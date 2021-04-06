@@ -61,7 +61,7 @@ def findPodvidGovn(wsg):
     mainGovn = []  # меин говно
 
     # for govn in govno
-    # return mainGovn, podvidGovn
+    return mainGovn, podvidGovn
 
 
 # from openpyxl import Workbook
