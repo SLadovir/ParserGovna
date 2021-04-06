@@ -9,6 +9,10 @@ def is_number(str):
         return False
 
 
+def findShitInH(wsg):
+
+    sortOfShit = []
+
 def findPodvidGovn(wsg):
     # тест коллекции говна
     # sortOfGovn.append(wsg['F6'].value)
@@ -56,7 +60,7 @@ def findPodvidGovn(wsg):
 
     mainGovn = []  # меин говно
 
-    # for
+    for govn
     return mainGovn, podvidGovn
 
 
