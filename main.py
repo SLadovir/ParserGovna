@@ -40,8 +40,8 @@ def findPodvidGovn(wsg):
         for i in govno2:
             sortOfGovn3.append(i.replace('—', '-').replace('–', '-').split(
                 '-'))  # Заменяем длинные минусы на короткие и разделяем строки по минусам
-    for govno3 in sortOfGovn3:
-        print(govno3)
+    # for govno3 in sortOfGovn3:
+    #     print(govno3)
 
     sortOfGovn4 = []  # подготовка для создания коллекции подвидов говна
     for govno3 in sortOfGovn3:
@@ -60,8 +60,11 @@ def findPodvidGovn(wsg):
 
     mainGovn = []  # меин говно
 
-    # for govn in sortOfGovn3:
-    #     if govn
+    for govn in sortOfGovn3:
+        if mainGovn.count(govn[0])==0:
+            mainGovn.append(govn[0])
+    # for g in mainGovn:
+    #     print(g)
 
     return mainGovn, podvidGovn
 
@@ -72,6 +75,8 @@ if __name__ == '__main__':
     wsg = wbg.active
 
     mainGovn, podvidGovn = findPodvidGovn(wsg)  # получение подвидов говна
+    # for g in mainGovn:
+    #     print(g)
     # for i in podvidGovn:
     #     print(i)
 
